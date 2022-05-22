@@ -2257,7 +2257,9 @@ input, select, textarea {
 		}
 
 /* Features */
-
+	#features{
+		width: 100%;
+	}
 	#features header.style1 {
 		padding-bottom: 5em;
 	}
@@ -2440,6 +2442,7 @@ input, select, textarea {
 
 		/* Basic */
 
+
 			body, input, select, textarea {
 				font-size: 11pt;
 				line-height: 1.5em;
@@ -2494,6 +2497,8 @@ input, select, textarea {
 				padding-top: 4em;
 				margin-top: 4em;
 			}
+
+			
 
 	}
 
@@ -2869,7 +2874,7 @@ input, select, textarea {
 					font-size: 0.9em;
 					width: 18em;
 					height: 2.5em;
-					top: -2.5em;
+					top: -2.3em;
 					line-height: 2.5em;
 					margin-bottom: -2.5em;
 					margin-left: -9em;
