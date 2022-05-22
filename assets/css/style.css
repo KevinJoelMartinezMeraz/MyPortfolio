@@ -1,0 +1,215 @@
+/**Typing **/
+/* .wrapper {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+   */
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+  
+    /**Carrusel **/
+    #highlights{
+      /* margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 10px; */
+      height: 520px;
+      background-color: #eee;
+      padding: 9em 0 11em;
+    }
+#drag-container, #spin-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(-10deg);
+          transform: rotateX(-10deg);
+}
+
+#drag-container img, #drag-container video {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 200px;
+  font-size: 50px;
+  text-align: center;
+  -webkit-box-shadow: 0 0 8px #fff;
+          box-shadow: 0 0 8px #fff;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+}
+
+#drag-container img:hover, #drag-container video:hover {
+  -webkit-box-shadow: 0 0 15px #fffd;
+          box-shadow: 0 0 15px #fffd;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+}
+
+#drag-container p {
+  font-family: Serif;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+          transform: translate(-50%,-50%) rotateX(90deg);
+  color: #fff;
+}
+
+#ground {
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+          transform: translate(-50%,-50%) rotateX(90deg);
+  background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+}
+
+#music-container {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+@-webkit-keyframes spin {
+  from{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  } to{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  } to{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes spinRevert {
+  from{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  } to{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes spinRevert {
+  from{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  } to{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+/**Pendul **/
+/* *, *::before, *::after {
+  box-sizing: border-box;
+  position: relative;
+} */
+
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 5px solid white;
+  margin: auto;
+  max-width: 25px;
+  float: right;
+  margin-right: 10%;
+}
+.thread::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(49.5%);
+  bottom: 25px;
+  background: black; 
+  width: 1px;
+  height: 85%;
+}
+.thread {
+  height: 6% !important;
+  display: inline-flex;
+  align-items: flex-end;
+  transform-origin: 50% 0%;
+  position: absolute;
+  top: -2px;
+  animation: 1s swing ease-in-out infinite alternate;
+  transform: rotate(-45deg);
+}
+.thread .pendulum {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(white,#795548);
+}
+
+:nth-child(1) {
+  animation-duration: 1055ms;
+  /* height: 162.5px; */
+}
+:nth-child(2) {
+  animation-duration: 1060ms;
+  /* height: 175px; */
+}
+:nth-child(3) {
+  animation-duration: 1065ms;
+  /* height: 187.5px; */
+}
+:nth-child(4) {
+  animation-duration: 1070ms;
+  /* height: 200px; */
+}
+:nth-child(5) {
+  animation-duration: 1075ms;
+  /* height: 212.5px; */
+}
+
+@keyframes swing {
+  from {
+    transform: rotate(-45deg);
+ }
+  to {
+    transform: rotate(45deg);
+ }
+}
