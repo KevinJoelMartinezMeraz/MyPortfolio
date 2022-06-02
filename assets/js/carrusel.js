@@ -10,7 +10,8 @@ var imgWidth = 120; // width of images (unit: px)
 var imgHeight = 170; // height of images (unit: px)
 
 // Link of background music - set 'null' if you dont want to play background music
-var bgMusicURL = 'https://api.soundcloud.com/tracks/143041228/stream?client_id=587aa2d384f7333a886010d5f52f302a';
+// var bgMusicURL = 'https://api.soundcloud.com/tracks/143041228/stream?client_id=587aa2d384f7333a886010d5f52f302a';
+var bgMusicURL = null;
 var bgMusicControls = true; // Show UI music control
 
 /*
@@ -127,3 +128,28 @@ document.onmousewheel = function(e) {
   radius += d;
   init(1);
 };
+
+
+(function($) {
+
+	var	$window = $(window),
+		$body = $('body');
+
+	// Breakpoints.
+		breakpoints({
+			xlarge:  [ '1281px',  '1680px' ],
+			large:   [ '981px',   '1280px' ],
+			medium:  [ '737px',   '980px'  ],
+			small:   [ null,      '736px'  ]
+		});
+
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
+
+	
+
+})(jQuery);
